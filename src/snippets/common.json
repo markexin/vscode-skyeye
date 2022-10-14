@@ -1,6 +1,0 @@
-{
-    "sky": {
-      "prefix": ["sky"],
-      "body": ["function url() {", "${1}", "} \n module.exports = { url };"]
-    }
-}
