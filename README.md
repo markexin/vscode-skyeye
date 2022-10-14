@@ -2,7 +2,7 @@
 
 ![version-v0.0.4](https://img.shields.io/badge/version-v0.0.4-yellow.svg) 
 ![build-passing](https://img.shields.io/badge/build-passing-green.svg) 
-![license-MIT](https://img.shields.io/badge/license-MIT-green.svg) 
+[![license-MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.md) 
 
 <img src="./media/s-icon.png" width="100" style="vertical-align: middle">
 
