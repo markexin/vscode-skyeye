@@ -1,6 +1,7 @@
 # Skyeye
 
-[]("./media/s-icon.png")
-天眼：vscode 插件，插件依赖本地集成 node 环境。主要为了方便集成各业务项目中，达成内存泄露监控以及优化，抹平命令式的学习成本。项目插件基于[memlab](https://github.com/facebook/memlab)，在此鸣谢大佬们的开源付出。
+<img src="./media/s-icon.png" width="100" style="vertical-align: middle">
+
+**天眼**：是 vscode extension。主要为了降低命令式的学习成本，提供快捷的方式集成到各业务项目中，以监控前端页面内存变化。项目插件基于[memlab](https://github.com/facebook/memlab)，在此十分感谢大佬们为开源做出的贡献❀❀❀。插件安装基于需要使用者配有 node 相关的开发环境。使用者需要提供的检测页面的完整URL，**请在开发模式下使用，构建工具（如：webpack）编译后的项目不方便定位内存调用栈**。
 
 **Enjoy!**
