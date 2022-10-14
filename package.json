@@ -20,8 +20,12 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "skyeye.quickInput",
-				"title": "立即开始👉🏻"
+				"command": "skyeye.webAnalysis",
+				"title": "网页分析"
+			},
+			{
+				"command": "skyeye.nodeHeap",
+				"title": "Node Heap"
 			}
 		],
 		"views": {
@@ -32,7 +36,7 @@
         },
 		"viewsWelcome": [{
             "view": "memory-doctor",
-            "contents": "Skyeye 是一款【E2E】测试和分析框架，用于发现 JavaScript 内存泄漏和优化机会.\n[立即开始](command:skyeye.quickInput)"
+            "contents": "Skyeye 是一款【E2E】测试和分析框架，用于发现 JavaScript 内存泄漏和优化机会.\n[Web Analysis](command:skyeye.webAnalysis)\n[Node Heap](command:skyeye.nodeHeap)"
         }],
 		"viewsContainers": {
 			"activitybar": [

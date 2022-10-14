@@ -13,11 +13,11 @@ export function activate(context: ExtensionContext) {
 
 	console.log('Skyeye is Ready! workspace is: ', _workspace);
 
-    context.subscriptions.push(commands.registerCommand('skyeye.quickInput', async () => {
+    context.subscriptions.push(commands.registerCommand('skyeye.webAnalysis', async () => {
 		const quickPick = window.createQuickPick();	
 		// 获取用户输入
 		quickPick.onDidChangeValue((v) => getUserInput = v);
-		quickPick.placeholder = "请输入待检测的页面URL";
+		quickPick.placeholder = "请输入页面URL";
 		// 展示
 		quickPick.show();
 		// 用户确认
@@ -26,6 +26,22 @@ export function activate(context: ExtensionContext) {
 			getUserInput = "";
 			quickPick.dispose();
 		});
+	}));
+
+
+	context.subscriptions.push(commands.registerCommand('skyeye.nodeHeap', async () => {
+		// const quickPick = window.createQuickPick();	
+		// // 获取用户输入
+		// quickPick.onDidChangeValue((v) => getUserInput = v);
+		// quickPick.placeholder = "请输入页面URL";
+		// // 展示
+		// quickPick.show();
+		// // 用户确认
+		// quickPick.onDidAccept(() => {
+		// 	handleTerminal(getUserInput, _workspace);
+		// 	getUserInput = "";
+		// 	quickPick.dispose();
+		// });
 	}));
 
 }
