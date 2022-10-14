@@ -1,8 +1,9 @@
 {
 	"name": "skyeye",
 	"displayName": "Skyeye",
+	"description": "插件化监控/分析 node Or web 内存变化",
 	"publisher": "markexin",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"icon": "media/s-icon.png",
 	"id": "markexin",
 	"repository": "https://github.com/markexin/vscode-skyeye",
