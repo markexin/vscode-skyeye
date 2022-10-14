@@ -2,7 +2,7 @@
 	"name": "skyeye",
 	"displayName": "Skyeye",
 	"publisher": "markexin",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"icon": "media/s-icon.png",
 	"id": "markexin",
 	"repository": "https://github.com/markexin/vscode-skyeye",
