@@ -1,8 +1,10 @@
 {
 	"name": "skyeye",
 	"displayName": "Skyeye",
-	"description": "",
+	"publisher": "markexin",
 	"version": "0.0.1",
+	"id": "markexin",
+	"repository": "https://github.com/markexin/vscode-note",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
