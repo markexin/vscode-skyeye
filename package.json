@@ -1,6 +1,6 @@
 {
-	"name": "vscode-note",
-	"displayName": "vscode-note",
+	"name": "memory-doctor",
+	"displayName": "Skyeye",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -10,16 +10,41 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-note.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"snippets": [
+			{
+			  "language": "javascript",
+			  "path": "./src/snippets/common.json"
+			}
+		],
 		"commands": [
 			{
-				"command": "vscode-note.helloWorld",
-				"title": "Hello World"
+				"command": "skyeye.quickInput",
+				"title": "立即开始👉🏻"
 			}
-		]
+		],
+		"views": {
+            "memory-doctor": [{
+                "id": "memory-doctor",
+                "name": "Skyeye"
+            }]
+        },
+		"viewsWelcome": [{
+            "view": "memory-doctor",
+            "contents": "Skyeye 是一款【E2E】测试和分析框架，用于发现 JavaScript 内存泄漏和优化机会.\n[立即开始](command:skyeye.quickInput)"
+        }],
+		"viewsContainers": {
+			"activitybar": [
+			  {
+				"id": "memory-doctor",
+				"title": "Skyeye 天眼",
+				"icon": "media/dep.svg"
+			  }
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

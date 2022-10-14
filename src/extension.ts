@@ -1,27 +1,31 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+// 'vscode'模块包含了VS Code extensibility API
+// 按下述方式导入这个模块
+import { window, commands, ExtensionContext, workspace } from 'vscode';
+import { handleTerminal } from './terminal';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	// console.log('Congratulations, your extension "vscode-note" is now active!');
+// 一旦你的插件激活，vscode会立刻调用下述方法
+export function activate(context: ExtensionContext) {
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-note.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
+    // 下面的代码只会在你的插件激活时执行一次
+	const _workspace = (workspace.workspaceFolders && workspace.workspaceFolders[0].uri.fsPath) || '';
+	let getUserInput: string = "";
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello VS Codes from vscode-note!');
-	});
+	console.log('Skyeye is Ready! workspace is: ', _workspace);
 
-	context.subscriptions.push(disposable);
+    context.subscriptions.push(commands.registerCommand('skyeye.quickInput', async () => {
+		const quickPick = window.createQuickPick();	
+		// 获取用户输入
+		quickPick.onDidChangeValue((v) => getUserInput = v);
+		quickPick.placeholder = "请输入待检测的页面URL";
+		// 展示
+		quickPick.show();
+		// 用户确认
+		quickPick.onDidAccept(() => {
+			handleTerminal(getUserInput, _workspace);
+			getUserInput = "";
+			quickPick.dispose();
+		});
+	}));
+
 }
-
-// this method is called when your extension is deactivated
-export function deactivate() {}
