@@ -4,7 +4,7 @@
 	"publisher": "markexin",
 	"version": "0.0.1",
 	"id": "markexin",
-	"repository": "https://github.com/markexin/vscode-note",
+	"repository": "https://github.com/markexin/vscode-skyeye",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -16,12 +16,6 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"snippets": [
-			{
-			  "language": "javascript",
-			  "path": "./src/snippets/common.json"
-			}
-		],
 		"commands": [
 			{
 				"command": "skyeye.quickInput",
