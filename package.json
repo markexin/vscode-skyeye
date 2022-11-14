@@ -36,7 +36,7 @@
         },
 		"viewsWelcome": [{
             "view": "memory-doctor",
-            "contents": "Skyeye 是一款【E2E】测试和分析框架，用于发现 JavaScript 内存泄漏和优化机会.\n[Web Analysis](command:skyeye.webAnalysis)\n[Node Heap](command:skyeye.nodeHeap)"
+            "contents": "Skyeye 是一款【E2E】测试和分析框架，建议在开发环境下使用【Web Analysis】，用于发现 JavaScript 内存泄漏点，寻找优化机会.\n[Web Analysis](command:skyeye.webAnalysis)\n[Node Heap](command:skyeye.nodeHeap)"
         }],
 		"viewsContainers": {
 			"activitybar": [

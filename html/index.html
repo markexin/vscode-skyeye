@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Web Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <style>
+    html, body {
+        background: #272823;
+        color: #fff;
+    }
+    a {
+      outline: 1px solid #0D6EFD !important;
+    }
+    input,button,select,textarea{outline:none}textarea{resize:none}
+    .container {
+        padding: 50px 20px;
+    }
+    .nav-pills {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .nav-link {
+      max-width: 200px;
+      border-radius: 50px !important;
+      margin: 0 20px;
+    }
+    .input-group {
+      display: inline-block;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+    .input-group input {
+      height: 60px;
+      width: 800px;
+      border-radius: 50px;
+      background: #272823;
+      color: #fff;
+      font-size: 20px;
+      padding: 0 20px;
+      border: 1px solid #0D6EFD;
+    }
+    .input-group input:focus {
+      border: 1px solid #0D6EFD !important;
+      outline: 1px solid #0D6EFD !important;
+    }
+  </style>
+  <body>
+    <div class="container text-center">
+      <!-- 地址栏 -->
+      <div class="input-group">
+        <input placeholder="请输入页面URL路径" type="text" aria-label="With textarea"></input>
+      </div>
+      <!-- 选择器 -->
+      <nav class="nav nav-pills nav-justified">
+        <a class="nav-link active" aria-current="page" href="#">页面跳转</a>
+        <a class="nav-link" href="#">事件点击</a>
+      </nav>
+      <!-- 地址栏 -->
+      <div class="input-group">
+        <input placeholder="请输入页面URL路径" type="text" aria-label="With textarea"></input>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="simple-image.js"></script>
+    <link href="simple-image.css" rel="stylesheet"/>
+
+    <div id="editorjs"></div>
+
+    <script>
+        const editor = new EditorJS({
+          autofocus: true
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+      const data = {}
+      const tabIndex = new Proxy(data, {
+        get(target, prop, receiver) {
+          return "world";
+        }
+      })
+      const $tab = document.querySelector('.nav')
+      $tab.addEventListener('click', function (e) {
+        console.log($tab.childNodes.forEach(item => {
+          if (item.nodeType === 1) {
+            item.setAttribute('class', 'nav-link');
+          }
+        }));
+        e.target.setAttribute('class', 'nav-link active');
+      })
+    </script>
+  </body>
+</html>
